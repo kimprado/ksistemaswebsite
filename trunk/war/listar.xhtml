@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Listar Clientes</title>
+</h:head>
+<h:body>
+	<h1>Clientes Cadastrados</h1>
+	<br />
+	<br />
+	<h:form>
+		<h:dataTable value="#{clienteMB.clientes}" var="c">
+		
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{c.nome}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Endereço</f:facet>
+				#{c.endereco}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Telefone</f:facet>
+		   		#{c.telefone}
+			</h:column>
+			
+			<h:column>
+				<h:dataTable value="#{c.dependentes}" var="d">
+					<h:column>
+	    				#{d.nome}
+	    	      	</h:column>
+				</h:dataTable>
+			</h:column>
+			
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>
