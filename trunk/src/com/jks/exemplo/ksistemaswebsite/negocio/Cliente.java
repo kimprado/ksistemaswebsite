@@ -1,12 +1,15 @@
 package com.jks.exemplo.ksistemaswebsite.negocio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.appengine.api.datastore.Key;
 
-public class Cliente {
+public class Cliente implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private Key id;
 	private String nome;
 	private String endereco;

@@ -1,4 +1,5 @@
 package com.jks.exemplo.ksistemaswebsite.mb;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,9 @@ import com.jks.exemplo.ksistemaswebsite.negocio.Dependente;
 
 @ManagedBean(name="clienteMB")
 @ApplicationScoped
-public class ClienteBean {
+public class ClienteBean implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private Cliente cliente = new Cliente();
 	private Dependente depen = new Dependente();
